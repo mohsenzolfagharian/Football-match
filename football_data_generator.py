@@ -26,7 +26,8 @@ def goal_result(goals, strng1, strng2):
     result = {"a":0, 'b': 0}
     for index in range(0, goals + 1):
         result['a'] += random.randint(0, strng1)
-        result['a'] += random.randint(0, strng2)
+        result['b'] += random.randint(0, strng2)
+        
     return result
 
 

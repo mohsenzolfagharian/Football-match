@@ -1,8 +1,9 @@
-import random 
+import random
+from tempfile import tempdir 
 
 
 def goal_number():
-    possible_goal_number_range = random.randint(1, 101)
+    possible_goal_number_range = random.randint(0, 101)
     
     if possible_goal_number_range < 76:
         result = random.randint(0, 3)
@@ -23,12 +24,22 @@ def goal_number():
     return result, possible_goal_number_range
 
 def goal_result(goals, strng1, strng2):
-    result = {"a":0, 'b': 0}
-    for index in range(0, goals + 1):
-        result['a'] += random.randint(0, strng1)
-        result['b'] += random.randint(0, strng2)
-        
-    return result
+    result = {'teamA':0, 'teamB':0}
+    team_result = []
+    
+    for x in range(strng1):
+        team_result.append('teamA')
+    for x in range(strng2):
+        team_result.append('teamB')
+    
+    random.shuffle(team_result)
+    
+    for x in range(goals):
+        goal = random.choice(team_result)
+        print(goal)
+        if goal in team_result:
+            result[goal] += 1
+    return max(result.values()), result
 
 
 print(goal_result(5, 3, 2))

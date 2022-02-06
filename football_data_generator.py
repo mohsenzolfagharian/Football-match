@@ -39,7 +39,7 @@ def goal_result(goals, strng1, strng2):
         print(goal)
         if goal in team_result:
             result[goal] += 1
-    return max(result.values()), result
-
+    # return max(result.values()), result
+    return result
 
 print(goal_result(5, 3, 2))

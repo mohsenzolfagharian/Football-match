@@ -23,14 +23,14 @@ def goal_number():
 
     return result, possible_goal_number_range
 
-def goal_result(goals, strng1, strng2):
-    result = {'teamA':0, 'teamB':0}
+def goal_result(goals, strng1, strng2, name1, name2):
+    result = {name1:0, name2:0}
     team_result = []
     
     for x in range(strng1):
-        team_result.append('teamA')
+        team_result.append(name1)
     for x in range(strng2):
-        team_result.append('teamB')
+        team_result.append(name2)
     
     random.shuffle(team_result)
     
@@ -42,4 +42,4 @@ def goal_result(goals, strng1, strng2):
     # return max(result.values()), result
     return result
 
-print(goal_result(5, 3, 2))
+print(goal_result(5, 3, 2, 'mohsen', 'mohammad'))

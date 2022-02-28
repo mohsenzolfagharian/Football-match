@@ -6,20 +6,17 @@ class Teams:
         self.name = name
         self.power = power
 
-    def name_(self):
+    def name_team(self):
         return self.name
 
     def power_team(self):
         return self.power
 
-    def add_name(self, new_name):
-        self.name = new_name
 
 
 class league:
 
     global result
-    # global possible_goal_number_range
 
     def goal_number(self):
         possible_goal_number_range = random.randint(0, 101)
@@ -43,25 +40,25 @@ class league:
         # return result, possible_goal_number_range
         return result
 
-    def goal_result(self, goals, strng1, strng2, name1, name2):
+    def match_result(self, goals, strng1, strng2, name1, name2):
         result = {name1:0, name2:0}
-        team_result = []
+        teams_plate = []
 
         for x in range(strng1):
-            team_result.append(name1)
+            teams_plate.append(name1)
         for x in range(strng2):
-            team_result.append(name2)
+            teams_plate.append(name2)
 
-        random.shuffle(team_result)
+        random.shuffle(teams_plate)
 
         for x in range(goals):
-            goal = random.choice(team_result)
-            if goal in team_result:
+            goal = random.choice(teams_plate)
+            if goal in teams_plate:
                 result[goal] += 1
         return result
 
 
-# define teams
+# # define teams
 
 # mohsen = Teams('mohsen', 70)
 # mohammad = Teams('mohammad', 50)

@@ -6,7 +6,10 @@ tuple_teams_list = ('barcelona', 40), ('manchester united', 70), ('liverpool', 2
 
 teams = {}
 result = {}
-# append teams from tuple to list
+# append teams from tuple to dict
 for x in tuple_teams_list:
     teams[x[0]] = Teams(x[0], x[1])
-print(teams['juve'].power_team())
+print(teams)
+# create a league sim
+
+

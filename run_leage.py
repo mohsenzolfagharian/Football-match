@@ -14,11 +14,14 @@ for x in tuple_teams_list:
 list_teams = list(teams.items())
 print()
 for x in range(len(list_teams)):
+    c = 1
     if x == len(list_teams) - 1:
         break
-    goals = my_league.goal_number()
-    reslut_match = my_league.match_result(goals, list_teams[x][1].power_team(), list_teams[x+1][1].power_team(), list_teams[x][1].name_team(), list_teams[x+1][1].name_team())
-    print(reslut_match)
+    while c <= len(list_teams):
+        goals = my_league.goal_number()
+        reslut_match = my_league.match_result(goals, list_teams[x][1].power_team(), list_teams[x+c][1].power_team(), list_teams[x][1].name_team(), list_teams[x+c][1].name_team())
+        print(reslut_match)
+        c += 1
 # print(teams)
 # create a league sim
 # for team in teams:

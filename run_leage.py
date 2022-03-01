@@ -1,4 +1,3 @@
-from operator import le
 from Football_data_gen_OOP import league, Teams
 
 my_league = league()

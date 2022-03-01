@@ -5,13 +5,15 @@ class Teams:
     def __init__(self, name, power):
         self.name = name
         self.power = power
-
+        self.points = self.gf = self.ga = self.wins = self.draws = self.losses = 0
     def name_team(self):
         return self.name
 
     def power_team(self):
         return self.power
-
+    
+    def add_goal(self):
+        self.gf += 1
 
 
 class league:

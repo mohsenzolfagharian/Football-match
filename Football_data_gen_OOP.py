@@ -17,10 +17,9 @@ class Teams:
 
 
 class league:
-
     global result
 
-    def goal_number(self):
+    def goals_number(self):
         possible_goal_number_range = random.randint(0, 101)
 
         if possible_goal_number_range < 76:
@@ -60,20 +59,19 @@ class league:
         return result
 
 
-# # define teams
+# define teams
 
 # mohsen = Teams('mohsen', 70)
 # mohammad = Teams('mohammad', 50)
 # ali = Teams('ali', 40)
-
-# # run leage 
+#
+# # run leage
 # test_leage = league()
-
+#
 # # possible goals for each game
-# goals = test_leage.goal_number()
-
+# goals = test_leage.goals_number()
+#
 # # every game result
-# result = test_leage.goal_result(goals=goals, strng1=mohsen.power, strng2=mohammad.power, name1=mohsen.name, name2=mohammad.name)
-
-# print(goals)
+# result = test_leage.match_result(goals=goals, strng1=mohsen.power, strng2=mohammad.power, name1=mohsen.name, name2=mohammad.name)
+#
 # print(result)

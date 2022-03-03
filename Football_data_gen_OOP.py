@@ -7,16 +7,12 @@ class Teams:
     def __init__(self, name, power):
         self.name = name
         self.power = power
-        self.points = self.gf = self.ga = self.wins = self.draws = self.losses = 0
 
     def name_team(self):
         return self.name
 
     def power_team(self):
         return self.power
-    
-    def add_goal(self):
-        self.gf += 1
 
 
 class league:
@@ -37,19 +33,19 @@ class league:
             result = random.randint(10, 20)
 
         elif possible_goal_number_range < 100:
-            result = random.randint(20,31)
+            result = random.randint(20, 31)
 
 
         # return result, possible_goal_number_range
         return result
 
-    def match_result(self, goals, strng1, strng2, name1, name2):
-        result = {name1:0, name2:0}
+    def match_result(self, goals, strong1, strong2, name1, name2):
+        result = {name1: 0, name2: 0}
         teams_plate = []
 
-        for x in range(strng1):
+        for x in range(strong1):
             teams_plate.append(name1)
-        for x in range(strng2):
+        for x in range(strong2):
             teams_plate.append(name2)
 
         random.shuffle(teams_plate)
@@ -61,6 +57,7 @@ class league:
         return result
 
     def face2face_mathces(self, list_teams):
+        data = []
         for x in range(len(list_teams)):
             c = 1
             # inja bayad facae 2 face ijad konim :)
@@ -71,11 +68,14 @@ class league:
                                                           list_teams[x + c][1].power_team(),
                                                           list_teams[x][1].name_team(),
                                                           list_teams[x + c][1].name_team())
-                    print(reslut_match)
+                    # data.append(reslut_match)
+                    file = open('data.txt', 'a')
+                    file.write(str(reslut_match)+'\n')
+                    file.close()
                     c += 1
                 except IndexError:
                     break
-
+        return data
 # define teams
 
 # mohsen = Teams('mohsen', 70)

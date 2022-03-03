@@ -1,11 +1,14 @@
 import random
 
+result = None
+
 
 class Teams:
     def __init__(self, name, power):
         self.name = name
         self.power = power
         self.points = self.gf = self.ga = self.wins = self.draws = self.losses = 0
+
     def name_team(self):
         return self.name
 
@@ -17,13 +20,12 @@ class Teams:
 
 
 class league:
-    global result
-
     def goals_number(self):
+        global result
         possible_goal_number_range = random.randint(0, 101)
 
         if possible_goal_number_range < 76:
-            result = random.randint(0, 3)
+            result = random.randint(1, 3)
 
         elif possible_goal_number_range < 86:
             result = random.randint(3, 6)

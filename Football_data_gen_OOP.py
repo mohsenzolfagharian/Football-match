@@ -58,6 +58,21 @@ class league:
                 result[goal] += 1
         return result
 
+    def face2face_mathces(self, list_teams):
+        for x in range(len(list_teams)):
+            c = 1
+            # inja bayad facae 2 face ijad konim :)
+            while c <= len(list_teams):
+                try:
+                    goals = self.goals_number()
+                    reslut_match = self.match_result(goals, list_teams[x][1].power_team(),
+                                                          list_teams[x + c][1].power_team(),
+                                                          list_teams[x][1].name_team(),
+                                                          list_teams[x + c][1].name_team())
+                    print(reslut_match)
+                    c += 1
+                except IndexError:
+                    break
 
 # define teams
 

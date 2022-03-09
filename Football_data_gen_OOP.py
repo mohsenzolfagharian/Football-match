@@ -15,7 +15,7 @@ class Teams:
         return self.power
 
 
-class league:
+class League:
     def goals_number(self):
         global result
         possible_goal_number_range = random.randint(0, 101)
@@ -56,7 +56,27 @@ class league:
                 result[goal] += 1
         return result
 
-    def face2face_mathces(self, list_teams):
+    def test(self, goals, team1, team2):
+        result = {team1.name_team(): 0, team2.name_team(): 0}
+        print(result)
+        teams_plate = []
+
+        for x in range(team1.power_team()):
+            teams_plate.append(team1.name_team())
+        for x in range(team2.power_team()):
+            teams_plate.append(team2.name_team())
+
+        print(teams_plate)
+        random.shuffle(teams_plate)
+
+        for x in range(goals):
+            goal = random.choice(teams_plate)
+            if goal in teams_plate:
+                result[goal] += 1
+        return result
+
+    def matches_result_save_to_file(self, list_teams):
+        file = open('data.txt', 'a')
         data = []
         for x in range(len(list_teams)):
             c = 1
@@ -69,26 +89,11 @@ class league:
                                                           list_teams[x][1].name_team(),
                                                           list_teams[x + c][1].name_team())
                     # data.append(reslut_match)
-                    file = open('data.txt', 'a')
                     file.write(str(reslut_match)+'\n')
-                    file.close()
                     c += 1
                 except IndexError:
                     break
+        file.close()
         return data
-# define teams
 
-# mohsen = Teams('mohsen', 70)
-# mohammad = Teams('mohammad', 50)
-# ali = Teams('ali', 40)
-#
-# # run leage
-# test_leage = league()
-#
-# # possible goals for each game
-# goals = test_leage.goals_number()
-#
-# # every game result
-# result = test_leage.match_result(goals=goals, strng1=mohsen.power, strng2=mohammad.power, name1=mohsen.name, name2=mohammad.name)
-#
-# print(result)
+

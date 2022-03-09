@@ -1,6 +1,6 @@
-from Football_data_gen_OOP import league, Teams
+from Football_data_gen_OOP import League, Teams
 
-my_league = league()
+my_league = League()
 
 tuple_teams_list = ('tottenham', 40), ('manchester united', 70), ('liverpool', 20), ('arsenal', 60), ('chelsea', 50), \
                    ('mancity', 80), ('leeds united', 50), ('everton', 55), ('newcastle', 40), ('westham', 35), \
@@ -19,5 +19,5 @@ list_teams = list(teams.items())
 c = 0
 # every season teams will face each other 2 time
 for x in range(0, 20):
-    my_league.face2face_mathces(list_teams)
+    my_league.matches_result_save_to_file(list_teams)
 

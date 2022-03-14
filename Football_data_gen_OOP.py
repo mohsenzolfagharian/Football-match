@@ -84,10 +84,10 @@ class League:
             while c <= len(list_teams):
                 try:
                     goals = self.goals_number()
-                    reslut_match = self.match_result(goals, list_teams[x][1].power_team(),
-                                                          list_teams[x + c][1].power_team(),
-                                                          list_teams[x][1].name_team(),
-                                                          list_teams[x + c][1].name_team())
+                    reslut_match = self.match_result(goals, list_teams[x].power_team(),
+                                                          list_teams[x + c].power_team(),
+                                                          list_teams[x].name_team(),
+                                                          list_teams[x + c].name_team())
                     # data.append(reslut_match)
                     file.write(str(reslut_match)+'\n')
                     c += 1

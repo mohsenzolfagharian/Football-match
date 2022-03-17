@@ -1,12 +1,14 @@
 import random
-
+import sqlite3
 result = None
+
 
 # define teams class
 class Teams:
     def __init__(self, name, power):
         self.name = name
         self.power = power
+        self.ga, self.gf, self.win, self.draw, self.lose = 0
 
     def name_team(self):
         return self.name
@@ -14,8 +16,12 @@ class Teams:
     def power_team(self):
         return self.power
 
-# define leage and matches class
+
+# define league and matches class
 class League:
+    conn = sqlite3.connect('league_table')
+    cur = conn.cursor()
+
     def goals_number(self):
         global result
         possible_goal_number_range = random.randint(0, 101)
@@ -70,6 +76,6 @@ class League:
                 except IndexError:
                     break
         file.close()
-        
 
-
+    def matches_result_save_to_DB(self):
+        self.cur.execute()

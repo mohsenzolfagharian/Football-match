@@ -12,9 +12,7 @@ list_team = []
 for x in tuple_teams_list:
     list_team.append(Teams(x[0], x[1]))
 
-
-
 # every season teams will face each other 2 time
-for x in range(0, 20):
+for x in range(0, 2):
     my_league.matches_result_save_to_file(list_team)
 

@@ -1,6 +1,5 @@
 import random
 import sqlite3
-result = None
 
 
 # define teams class
@@ -8,7 +7,7 @@ class Teams:
     def __init__(self, name, power):
         self.name = name
         self.power = power
-        self.ga, self.gf, self.win, self.draw, self.lose = 0
+        self.ga, self.gf, self.win, self.draw, self.lose = 0, 0, 0, 0, 0
 
     def name_team(self):
         return self.name
@@ -19,13 +18,10 @@ class Teams:
 
 # define league and matches class
 class League:
-    conn = sqlite3.connect('league_table')
-    cur = conn.cursor()
 
     def goals_number(self):
-        global result
         possible_goal_number_range = random.randint(0, 101)
-
+        result = 0
         if possible_goal_number_range < 76:
             result = random.randint(1, 3)
 
@@ -62,7 +58,6 @@ class League:
                 result[goal] += 1
         return result
 
- 
     def matches_result_save_to_file(self, list_teams):
         file = open('data.txt', 'a')
         for x in range(len(list_teams)):
@@ -77,5 +72,3 @@ class League:
                     break
         file.close()
 
-    def matches_result_save_to_DB(self):
-        self.cur.execute()

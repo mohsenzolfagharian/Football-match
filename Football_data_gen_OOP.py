@@ -58,17 +58,4 @@ class League:
                 result[goal] += 1
         return result
 
-    def matches_result_save_to_file(self, list_teams):
-        file = open('data.txt', 'a')
-        for x in range(len(list_teams)):
-            c = 1
-            while c <= len(list_teams):
-                try:
-                    goals = self.goals_number()
-                    result_match = self.match_result(goals, list_teams[x], list_teams[x+c])
-                    file.write(str(result_match)+'\n')
-                    c += 1
-                except IndexError:
-                    break
-        file.close()
 

@@ -1,7 +1,6 @@
 import sqlite3
 
 
-
 class DB:
     def __init__(self):
         self.conn = sqlite3.connect('table_league')
@@ -43,8 +42,6 @@ class DB:
         # self.conn.close()
         return data
     
-
-
 
 # a = DB()
 # a.Create_table(1)

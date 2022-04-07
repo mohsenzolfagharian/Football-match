@@ -1,5 +1,4 @@
 import random
-import sqlite3
 
 
 # define teams class
@@ -19,6 +18,7 @@ class Teams:
 # define league and matches class
 class League:
 
+    # making the number of each match goals
     def goals_number(self):
         possible_goal_number_range = random.randint(0, 101)
         result = 0
@@ -37,10 +37,9 @@ class League:
         elif possible_goal_number_range < 100:
             result = random.randint(20, 31)
 
-
-        # return result, possible_goal_number_range
         return result
 
+    # making match result for each match
     def match_result(self, goals, team1, team2):
         result = {team1.name_team(): 0, team2.name_team(): 0}
         teams_plate = []

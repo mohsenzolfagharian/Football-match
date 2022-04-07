@@ -1,6 +1,7 @@
 from Football_data_gen_OOP import League
 
 
+# create a file to save the result of each match on text file
 def matches_result_save_to_file(list_teams):
     league = League()
     file = open('data.txt', 'a')

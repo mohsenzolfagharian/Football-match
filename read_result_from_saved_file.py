@@ -1,6 +1,8 @@
 import ast
 import json
 
+# read data from saved file , and it need to get better
+
 
 def read():
     data_as_json = {}

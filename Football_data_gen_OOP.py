@@ -1,5 +1,5 @@
 import random
-
+import sqlite3
 
 # define teams class
 class Teams:
@@ -41,7 +41,7 @@ class League:
 
     # making match result for each match
     def match_result(self, goals, team1, team2):
-        result = {team1.name_team(): 0, team2.name_team(): 0}
+        result = {f"{team1.name_team()}": 0, f"{team2.name_team()}": 0}
         teams_plate = []
 
         for x in range(team1.power_team()):
